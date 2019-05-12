@@ -319,10 +319,10 @@
   resolved "https://registry.yarnpkg.com/@keeveestore/keeveestore/-/keeveestore-0.1.0.tgz#0a066bcfda279c36ee22a919872b02bd4500c560"
   integrity sha512-DcCfHe7lrLBW8y4IesIeDnNKASZkxCY8mvIuCnUarzRzJuTqo/Z+7u/qWe7T43s0KauP6s/TsX0MqIZCYw1OwA==
 
-"@keeveestore/test-suite@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@keeveestore/test-suite/-/test-suite-0.1.2.tgz#5ecff83e64fc19a1e6c3bd8cc3f0f60c11bf4b01"
-  integrity sha512-A8iB2d4x4+zpyXb81NDF/v33c6pW6EzuUFzL/FqMQ4oJDEuc08iCylcNyc8dnaXKm9Q4pZS83tfAggunnVkK3g==
+"@keeveestore/test-suite@^0.1.3":
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/@keeveestore/test-suite/-/test-suite-0.1.3.tgz#24c744096d34b08d7caf2e9c46b7cb042e425856"
+  integrity sha512-b3NMINgKA6Za3/piNBjL9AwsRpf+hs28MYP6tkeJTF1tpuKXGDvAntLvPBJMAYkTaAz1bFZ3fucFqjsX+D2bvQ==
   dependencies:
     "@keeveestore/keeveestore" "^0.1.0"
     jest-extended "^0.11.1"
