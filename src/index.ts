@@ -4,7 +4,13 @@ import { DynamoDB } from "aws-sdk";
 import { GetItemOutput, ScanOutput } from "aws-sdk/clients/dynamodb";
 
 export class StoreAsync<K, T> implements IKeyValueStoreAsync<K, T> {
-	private constructor(private readonly store: DynamoDB) {}
+	private constructor(
+		private readonly store: DynamoDB,
+		private readonly opts: {
+			tableName: string;
+			connection: DynamoDB.ClientConfiguration;
+		},
+	) {}
 
 	public static async new<K, T>(opts: {
 		tableName: string;
@@ -32,7 +38,7 @@ export class StoreAsync<K, T> implements IKeyValueStoreAsync<K, T> {
 						ReadCapacityUnits: 1,
 						WriteCapacityUnits: 1,
 					},
-					TableName: StoreAsync.opts.tableName,
+					TableName: opts.tableName,
 					StreamSpecification: {
 						StreamEnabled: false,
 					},
@@ -41,7 +47,7 @@ export class StoreAsync<K, T> implements IKeyValueStoreAsync<K, T> {
 			// tslint:disable-next-line: no-empty
 		} catch (error) {}
 
-		return new StoreAsync<K, T>(store);
+		return new StoreAsync<K, T>(store, opts);
 	}
 
 	public async all(): Promise<[K, T][]> {
