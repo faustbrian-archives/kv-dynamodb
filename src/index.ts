@@ -9,7 +9,7 @@ export class StoreAsync<K, T> implements IKeyValueStoreAsync<K, T> {
 		private readonly opts: {
 			tableName: string;
 			connection: DynamoDB.ClientConfiguration;
-		},
+		}
 	) {}
 
 	public static async new<K, T>(opts: {
@@ -61,15 +61,18 @@ export class StoreAsync<K, T> implements IKeyValueStoreAsync<K, T> {
 			return [];
 		}
 
-		return rows.Items.map(row => [row.ItemKey!.S as any, row.ItemValue!.S as any]);
+		return rows.Items.map((row) => [
+			row.ItemKey!.S as any,
+			row.ItemValue!.S as any,
+		]);
 	}
 
 	public async keys(): Promise<K[]> {
-		return (await this.all()).map(row => row[0]);
+		return (await this.all()).map((row) => row[0]);
 	}
 
 	public async values(): Promise<T[]> {
-		return (await this.all()).map(row => row[1]);
+		return (await this.all()).map((row) => row[1]);
 	}
 
 	public async get(key: K): Promise<T | undefined> {
@@ -126,7 +129,9 @@ export class StoreAsync<K, T> implements IKeyValueStoreAsync<K, T> {
 	}
 
 	public async putMany(values: [K, T][]): Promise<boolean[]> {
-		return Promise.all(values.map(async (value: [K, T]) => this.put(value[0], value[1])));
+		return Promise.all(
+			values.map(async (value: [K, T]) => this.put(value[0], value[1]))
+		);
 	}
 
 	public async has(key: K): Promise<boolean> {
