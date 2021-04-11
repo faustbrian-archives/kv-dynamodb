@@ -61,7 +61,7 @@ export class StoreAsync<K, T> implements IKeyValueStoreAsync<K, T> {
 			return [];
 		}
 
-		return rows.Items.map(row => [row.ItemKey.S as any, row.ItemValue.S as any]);
+		return rows.Items.map(row => [row.ItemKey!.S as any, row.ItemValue!.S as any]);
 	}
 
 	public async keys(): Promise<K[]> {
@@ -84,7 +84,7 @@ export class StoreAsync<K, T> implements IKeyValueStoreAsync<K, T> {
 			return undefined;
 		}
 
-		return row ? ((row.Item.ItemValue.S as unknown) as T) : undefined;
+		return row ? ((row.Item.ItemValue!.S as unknown) as T) : undefined;
 	}
 
 	public async getMany(keys: K[]): Promise<(T | undefined)[]> {
