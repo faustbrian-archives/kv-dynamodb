@@ -1,5 +1,6 @@
 import { complianceTestsAsync } from "@konceiver/kv-test-suite";
-import { StoreAsync } from "../src";
+
+import { StoreAsync } from "./async";
 
 complianceTestsAsync(
 	() =>
@@ -19,5 +20,5 @@ complianceTestsAsync(
 		key3: "value3",
 		key4: "value4",
 		key5: "value5",
-	},
+	}
 );
