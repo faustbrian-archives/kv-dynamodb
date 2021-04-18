@@ -26,12 +26,12 @@
 		"dist"
 	],
 	"dependencies": {
-		"@konceiver/kv": "^1.0.0",
-		"aws-sdk": "^2.809.0"
+		"@konceiver/kv": "^1.0.1",
+		"aws-sdk": "^2.888.0"
 	},
 	"devDependencies": {
 		"@konceiver/kv-test-suite": "^1.0.0",
-		"@konceiver/tease": "^2.0.0"
+		"@konceiver/tease": "^2.0.1"
 	},
 	"types": "dist/index"
 }
