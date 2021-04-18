@@ -1,6 +1,6 @@
 import { complianceTestsAsync } from "@konceiver/kv-test-suite";
 
-import { StoreAsync } from "./async";
+import { StoreAsync } from "./index";
 
 complianceTestsAsync(
 	() =>
