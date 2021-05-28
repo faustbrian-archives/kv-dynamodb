@@ -27,7 +27,7 @@
 	],
 	"dependencies": {
 		"@konceiver/kv": "^1.0.1",
-		"aws-sdk": "^2.915.0"
+		"aws-sdk": "^2.917.0"
 	},
 	"devDependencies": {
 		"@konceiver/kv-test-suite": "^1.0.0",
